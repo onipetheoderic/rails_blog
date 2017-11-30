@@ -1,0 +1,13 @@
+<div class="container">
+
+<% @posts.each do |post| %>
+<div class="card card-1">
+<h4> <%= link_to post.title, post %></h4>
+<p><%= truncate post.body, length: 300 %></p>
+<%= link_to 'read more', post %> 
+<%= time_ago_in_words(post.created_at) %> Ago
+</div>
+<%end%>
+
+</div>
+<p><%= will_paginate @posts, renderer: BootstrapPagination::Rails, inner_window: 1, outer_window: 0 %></p>

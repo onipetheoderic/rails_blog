@@ -1,0 +1,2 @@
+    conflict  config/initializers/devise.rb
+<tializers/devise.rb? (enter "h" for help) [Ynaqdh] hTerminate batch job (Y/N)? 

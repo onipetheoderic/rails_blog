@@ -1,0 +1,8 @@
+      invoke  active_record
+      create    db/migrate/20171130020214_devise_create_installs.rb
+      create    app/models/install.rb
+      invoke    test_unit
+      create      test/models/install_test.rb
+      create      test/fixtures/installs.yml
+      insert    app/models/install.rb
+       route  devise_for :installs

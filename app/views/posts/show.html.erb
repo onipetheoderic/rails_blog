@@ -1,0 +1,31 @@
+<div class="container">
+
+<p><%= link_to "Home", root_path%>
+<% if user_signed_in? %>
+	<div class= "row">
+	<%= link_to "Edit", edit_post_path %></p>
+
+	<%= link_to "Delete", post_path(@post), method: :delete, data: { confirm: "Are you sure?" } %>
+	</div>
+<% else %>
+    <li>
+      <%= link_to('Login', new_user_session_path)  %>  
+    </li>
+<% end %>
+<div class="card2">
+<h4><%= @post.title %></h4>
+<p><%= @post.body %></p>
+<p>Submitted: <%= time_ago_in_words(@post.created_at) %> Ago</p>
+</div>
+
+
+
+	<div id="comments">
+		<h2><%= @post.comments.count %> Comments</h2>
+		<%= render @post.comments %> 
+		<h3>Add a Comment</h3>
+
+		<%= render "comments/form" %>
+	</div>
+
+</div>

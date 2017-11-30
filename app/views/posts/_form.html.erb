@@ -1,0 +1,35 @@
+<%= form_for :post, url: posts_path do |f| %>
+	<% if @post.errors.any? %>
+		<div id="error">
+		<h3>
+			<%= pluralize(@post.errors.count, "error")%>
+			prevented this post from saving to the database
+		</h3>
+		<ul>
+			<%= @post.errors.full_messages.each do |msg| %>
+			<li> <%= msg %></li>
+			<%end%>
+		</ul>
+	<%end%>
+			
+		</div>
+
+		<div id = "form-control">
+		<p>
+			<%= f.label :title %>
+			<%= f.text_field :title %> <br>
+		</p>
+
+		<p>
+			<%= f.label :body %>
+			<%= f.text_area :body %>
+			
+		</p>
+		<p>
+			
+			<%= f.submit "Create post", :class => 'btn btn-primary' %>
+
+
+		</p>
+		</div>
+<%end%>
